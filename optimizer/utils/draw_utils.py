@@ -34,14 +34,16 @@ def create_diagram(rectangles, security, room_size, filename):
         x_table -= security/2
         y_table -= security/2
 
-        rect = plt.Rectangle((x, y), width, height, linewidth=1, edgecolor='r', facecolor='none')
-        ax.add_patch(rect)
+        sec = plt.Rectangle((x, y), width, height, linewidth=1, edgecolor='r', facecolor='none', alpha=0.2)
+        ax.add_patch(sec)
 
 
-        rect = plt.Rectangle((x_table, y_table), w_table, h_table ,linewidth=2, edgecolor='b', facecolor='none')
-        ax.add_patch(rect)
-
-        plt.text(x + width/3, y + height/2, str(width-security) +','+ str(height-security))
+        table = plt.Rectangle((x_table, y_table), w_table, h_table, 
+            linewidth=2, edgecolor='b', facecolor='none')
+        ax.add_patch(table)
+        w = round(box.width-security, 2)
+        h = round(box.height-security, 2)
+        plt.text(x + width/3, y + height/2, f'{w}, {h}')
 
     ax.scatter([1], [1],color="w")
     plt.savefig(str(filename)+'.png')
