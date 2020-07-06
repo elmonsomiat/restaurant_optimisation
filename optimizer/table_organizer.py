@@ -1,5 +1,5 @@
-from utils.utils import calculate_rectangles
-from utils.draw_utils import create_diagram, get_room_dims, get_security_dist, get_table_dims
+from utils.utils import calculate_rectangles, get_room_dims, get_security_dist, get_table_dims
+from utils.draw_utils import create_diagram
 from rectpack import newPacker
 
 
