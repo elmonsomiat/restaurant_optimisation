@@ -20,4 +20,4 @@ An example on how this will look like:
 
 The output to this list of requirements will be:
 
-<img src="diagram\[10.0\,\ 15.0\].png" align="left" />
+<img src="diagram[10.0, 15.0].png" align="left" />
