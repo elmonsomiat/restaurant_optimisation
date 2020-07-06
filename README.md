@@ -11,7 +11,13 @@ The following steps will allow you run the script:
 * Clone the respository
 * `cd` into the repository location from the terminal
 * Type `pip install -r requirements.txt` in the terminal
-* Type `python3 optimizer/table_organizer.py
+* Type `python optimizer/table_organizer.py`
+
 
 An example on how this will look like:
+
 <img src="terminal.png" align="left" />
+
+The output to this list of requirements will be:
+
+<img src="diagram\[10.0\,\ 15.0\].png" align="left" />
