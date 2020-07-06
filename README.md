@@ -14,4 +14,4 @@ The following steps will allow you run the script:
 * Type `python3 optimizer/table_organizer.py
 
 An example on how this will look like:
-![alt text](https://github.com/elmonsomiat/restaurant_optimisation/blob/master]/terminal.png?raw=true)
+<img src="terminal.png" align="left" />
