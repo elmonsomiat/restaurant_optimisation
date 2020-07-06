@@ -20,7 +20,35 @@ def run(room_size_split, security_distance, table_sizes, draw=True):
             for box in packer[0]:
                 print(box)
 
-            
+
+def get_room_dims(loop):
+    _len = input(f'What is the lenght of space {loop}?: ')
+    _wid = input(f'What is the width of space {loop}?: ')
+    try:
+        return [float(_len), float(_wid)]
+        restaurant_list.append([float(_len), float(_wid)])
+    except ValueError:
+        print('Dimensions should be numbers! Try again...')
+        get_room_dims(loop)
+
+def get_security_dist():
+    try:
+        security = input('What is the security distance?: ')
+        return float(security)
+    except ValueError:
+        print('Dimensions should be numbers! Try again...')
+        get_security_dist()
+
+
+def get_table_dims():
+    try:
+        _len = input('What is the lenght of the table?: ')
+        _wid = input('What is the width of the table?: ')
+        return [float(_len), float(_wid)]
+    except ValueError:
+        print('Dimensions should be numbers! Try again...')
+        get_table_dims()
+
 if __name__=='__main__':
     print('Welcome to the restaurant optimiser!')
     print('Hope this can help you! Remember all units are in m.')
@@ -28,26 +56,23 @@ if __name__=='__main__':
     restaurant_list = []
     i = 1
     while True:
-        _len = input(f'What is the lenght of space {1}?: ')
-        _wid = input(f'What is the width of space {1}?: ')
-        restaurant_list.append([float(_len), float(_wid)])
-        _continue = input('Are there any more spaces?(y/n): ')
+        restaurant_list.append(get_room_dims(i))
+        _continue = input('Are there any more spaces?(n/y): ')
+        _continue = _continue or 'n'
         i += 1
         if _continue=='n':
             break
-        
-    
-    security = input('What is the security distance?:')
+    security = get_security_dist()
     
     table_list = []
     while True:
-        _len = input('What is the lenght of the table?: ')
-        _wid = input('What is the width of the table?: ')
-        table_list.append([float(_len), float(_wid)])
-        _continue = input('Are there any more table sizes?(y/n): ')
+        table_list.append(get_table_dims())
+        _continue = input('Are there any more table sizes?(n/y): ')
+        _continue = _continue or 'n'
         if _continue=='n':
             break
-    _draw = input('Do you want to save the outcome as png images?(y/n)')
+    _draw = input('Do you want to save the outcome as png images?(y/n): ')
+    _draw = _draw or 'y'
    
     if _draw=='y':
         draw = True
